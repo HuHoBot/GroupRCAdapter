@@ -1,10 +1,10 @@
-# RCHuHoBot - Spigot Adapter
+# HuHoBot GroupRCAdapter
 
-[![GitHub Release](https://img.shields.io/github/v/release/HuHoBot/KotlinMergeAdapter?style=for-the-badge)](https://github.com/HuHoBot/KotlinMergeAdapter/releases)
-[![License](https://img.shields.io/github/license/HuHoBot/KotlinMergeAdapter?style=for-the-badge)](https://github.com/HuHoBot/KotlinMergeAdapter/blob/main/LICENSE)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/HuHoBot/KotlinMergeAdapter/build.yml?style=for-the-badge)](https://github.com/HuHoBot/KotlinMergeAdapter/actions)
+[![GitHub Release](https://img.shields.io/github/v/release/HuHoBot/GroupRCAdapter?style=for-the-badge)](https://github.com/HuHoBot/GroupRCAdapter/releases)
+[![License](https://img.shields.io/github/license/HuHoBot/GroupRCAdapter?style=for-the-badge)](https://github.com/HuHoBot/GroupRCAdapter/blob/main/LICENSE)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/HuHoBot/GroupRCAdapter/build.yml?style=for-the-badge)](https://github.com/HuHoBot/GroupRCAdapter/actions)
 
-HuHoBot 的 Spigot 子服适配器，通过 Redis 实现 Velocity 与子服之间的跨服命令通讯。
+HuHoBot 的 群组子服适配器，通过 Redis 实现 Velocity 与子服之间的跨服命令通讯。
 
 ## 功能特性
 
@@ -82,20 +82,11 @@ redis:
 
 ## 工作原理
 
-RCHuHoBot 使用 Redis 的发布/订阅（Pub/Sub）机制实现 Velocity 与 Spigot 子服之间的通讯：
+RCHuHoBot 使用 Redis 的发布/订阅（Pub/Sub）机制实现 Velocity/BungeeCord 与 Spigot 子服之间的通讯：
 
 1. **命令通道**: Velocity 通过 Redis 发送命令到指定子服
 2. **回调通道**: 子服捕获命令执行的日志并实时返回给 Velocity
 3. **广播支持**: 支持向所有子服同时发送命令
-
-详细的通讯协议请参考 [framework.md](framework.md)
-
-## 技术栈
-
-- **语言**: Kotlin 2.2.0
-- **构建工具**: Gradle 8.12
-- **Redis 客户端**: Jedis 5.0.0
-- **任务调度**: UniversalScheduler 0.1.6
 - **最低 Java 版本**: Java 8
 
 ## 常见问题
@@ -134,32 +125,21 @@ cd RCHuHoBot
 # 生成的 jar 在 build/libs/ 目录
 ```
 
-## 开源协议
+#### 查看开发文档
 
-本项目采用 [MIT License](LICENSE) 开源协议。
+如果你需要更详细的开发指南和高级功能，请查阅[开发文档](framework.md)。
 
-## 相关链接
+## 📄 开源协议
 
-- **官方文档**: https://huhobot.txssb.cn/
-- **问题反馈**: [GitHub Issues](https://github.com/huohuas001/RCHuHoBot/issues)
-- **协议文档**: [framework.md](framework.md)
+[GNU General Public License v3.0](LICENSE) - 自由使用、修改和分发，但需遵守以下条款：
 
-## 更新日志
+- **开源义务**：任何衍生作品必须保持开源
+- **相同许可**：修改后的版本必须使用相同许可证
+- **版权声明**：必须保留原始版权声明
 
-### v1.0.0 (2025-01-31)
+完整协议文本请查看 [LICENSE](LICENSE) 文件
 
-- 🎉 首次发布
-- ✅ Redis 连接管理
-- ✅ 跨服命令执行
-- ✅ 实时日志捕获
-- ✅ 管理命令支持
-- ✅ 优雅的错误处理
-- ✅ 完整的配置选项
+## 🤝 参与贡献
 
-## 贡献
+欢迎提交PR或通过[Discussions](https://github.com/HuHoBot/GroupRCAdapter/discussions)提出建议
 
-欢迎提交 Issue 和 Pull Request！
-
----
-
-**Made with ❤️ by HuoHuas001**
