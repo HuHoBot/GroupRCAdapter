@@ -1,0 +1,16 @@
+server-name: "MyServer"
+
+# Debug mode - set to true to see detailed error stack traces
+debug: false
+
+redis:
+  host: "localhost"
+  port: 6379
+  password: ""
+  database: 0
+  timeout: 2000
+  command-channel: "HuHoBotChannel"
+  pool:
+    max-total: 8
+    max-idle: 8
+    min-idle: 0
